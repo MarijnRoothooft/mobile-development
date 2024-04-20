@@ -8,3 +8,5 @@ const TaskDetail: FunctionComponent = () => {
 
     return <WedstrijdForm id={wedstrijdId === '-1' ? undefined : wedstrijdId} />
 }
+
+export default TaskDetail

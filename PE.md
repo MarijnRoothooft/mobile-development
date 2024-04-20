@@ -14,5 +14,5 @@ Hier wil ik een scherm bouwen die de speciefieke data van een speler toont (die 
 ik zou de gegevens van de wedstrijden & speler bij houden in een database & een camera implementeren voor foto's 
 # Feedback
 
-**Wordt verder aangevuld door jouw docent.**
-
+Er miste een export in je TaskDetail, waardoor ik niet kon doorklikken naar de detail. Heb het aangepast.
+1/2
