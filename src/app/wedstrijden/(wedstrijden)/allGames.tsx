@@ -1,7 +1,7 @@
 import {FunctionComponent} from 'react'
 import {FlatList} from 'react-native'
 
-import WedstrijdItem from '@/app/wedstrijden/(wedstrijden)/wedstrijdItem'
+import WedstrijdItem from '@/app/wedstrijden/wedstrijdItem'
 import useWedstrijden from '@/hooks/useWedstrijden'
 
 interface AllGamesProps {}

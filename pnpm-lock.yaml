@@ -11,6 +11,9 @@ dependencies:
   '@expo/vector-icons':
     specifier: ^14.0.0
     version: 14.0.0
+  '@op-engineering/op-sqlite':
+    specifier: ^5.0.5
+    version: 5.0.5(react-native@0.73.4)(react@18.2.0)
   '@react-native-community/datetimepicker':
     specifier: ^7.6.4
     version: 7.6.4
@@ -20,6 +23,9 @@ dependencies:
   '@react-navigation/native':
     specifier: ^6.0.2
     version: 6.1.10(react-native@0.73.4)(react@18.2.0)
+  '@tanstack/react-query':
+    specifier: ^5.32.0
+    version: 5.32.0(react@18.2.0)
   expo:
     specifier: ~50.0.6
     version: 50.0.6(@babel/core@7.23.9)(@react-native/babel-preset@0.73.21)
@@ -2400,6 +2406,16 @@ packages:
       rimraf: 3.0.2
     dev: false
 
+  /@op-engineering/op-sqlite@5.0.5(react-native@0.73.4)(react@18.2.0):
+    resolution: {integrity: sha512-7BK+U2EY4S8ZUc0zKuRQkDiadP3lyhSimspu74GQsjzT3tjmbcrJ19rg7+D0T1bAAOJNbyHQhWZvcKtkHiBRRg==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      react: 18.2.0
+      react-native: 0.73.4(@babel/core@7.23.9)(@babel/preset-env@7.23.9)(react@18.2.0)
+    dev: false
+
   /@pkgr/core@0.1.1:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
@@ -3002,6 +3018,19 @@ packages:
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
     dependencies:
       '@sinonjs/commons': 3.0.1
+
+  /@tanstack/query-core@5.32.0:
+    resolution: {integrity: sha512-Z3flEgCat55DRXU5UMwYU1U+DgFZKA3iufyOKs+II7iRAo0uXkeU7PH5e6sOH1CGEag0IpKmZxlUFpCg6roSKw==}
+    dev: false
+
+  /@tanstack/react-query@5.32.0(react@18.2.0):
+    resolution: {integrity: sha512-+E3UudQtarnx9A6xhpgMZapyF+aJfNBGFMgI459FnduEZqT/9KhOWnMOneZahLRt52yzskSA0AuOyLkXHK0yBA==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@tanstack/query-core': 5.32.0
+      react: 18.2.0
+    dev: false
 
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}

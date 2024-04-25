@@ -21,6 +21,7 @@ const WedstrijdForm: FunctionComponent<WedstrijdFormProps> = ({id}) => {
     const [datum, setDatum] = useState<Date | undefined>(
         activeWedstrijd?.datum ? new Date(activeWedstrijd?.datum) : undefined,
     )
+    const [showDatePicker, setShowDatePicker] = useState(false)
     const navigation = useNavigation()
 
     const handleCreateUpdate = () => {
@@ -68,12 +69,19 @@ const WedstrijdForm: FunctionComponent<WedstrijdFormProps> = ({id}) => {
                 onChangeText={value => setGoalPloeg2(Number(value))}
             />
 
-            <DateTimePicker
-                value={datum ?? new Date()}
-                mode="date"
-                display="default"
-                onChange={(event: DateTimePickerEvent, selectedDate?: Date | undefined) => setDatum(selectedDate)}
-            />
+            {showDatePicker && (
+                <DateTimePicker
+                    value={datum ?? new Date()}
+                    mode="date"
+                    display="default"
+                    onChange={(event: DateTimePickerEvent, selectedDate?: Date | undefined) => {
+                        setShowDatePicker(false)
+                        if (selectedDate) {
+                            setDatum(selectedDate)
+                        }
+                    }}
+                />
+            )}
         </View>
     )
 }

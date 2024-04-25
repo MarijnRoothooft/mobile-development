@@ -13,7 +13,7 @@ const Wedstrijdlayout: FunctionComponent = () => {
             <Stack.Screen
                 name="(wedstrijden)"
                 options={{
-                    title: 'Games',
+                    title: 'Gamepage',
                     headerLeft: ({tintColor}) => (
                         <IconButton
                             icon="menu"

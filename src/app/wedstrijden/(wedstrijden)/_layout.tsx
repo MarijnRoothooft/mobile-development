@@ -11,7 +11,7 @@ const TabsLayout: FunctionComponent = () => {
             <Tabs.Screen
                 name="toBePlayedGames"
                 options={{
-                    title: 'future games',
+                    title: 'Future games',
                     tabBarIcon: ({color, size}) => (
                         <Icon
                             source="calendar-clock"

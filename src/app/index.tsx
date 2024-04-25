@@ -2,8 +2,6 @@ import {Link} from 'expo-router'
 import {FunctionComponent} from 'react'
 import {Button, Text} from 'react-native-paper'
 
-import ThemeProvider from '@/context/themeProvider'
-
 const Index: FunctionComponent = () => {
     return (
         <>
@@ -13,7 +11,7 @@ const Index: FunctionComponent = () => {
                 <Button>Players</Button>
             </Link>
 
-            <Link href="/wedstrijden/">
+            <Link href="/wedstrijden/(wedstrijden)/allGames">
                 <Button>Games</Button>
             </Link>
         </>

@@ -1,14 +1,26 @@
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import {Drawer} from 'expo-router/drawer'
 import {FunctionComponent} from 'react'
 import {useTheme} from 'react-native-paper'
 
 import ThemeProvider from '@/context/themeProvider'
 
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: !__DEV__,
+            staleTime: Infinity,
+        },
+    },
+})
+
 const ThemeWrapper: FunctionComponent = () => {
     return (
-        <ThemeProvider>
-            <Layout />
-        </ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+            <ThemeProvider>
+                <Layout />
+            </ThemeProvider>
+        </QueryClientProvider>
     )
 }
 
@@ -21,7 +33,6 @@ const Layout: FunctionComponent = () => {
                     headerTintColor: theme.colors.onSurface,
                 }}>
                 <Drawer.Screen
-                    redirect
                     name="index"
                     options={{title: 'Home'}}
                 />
