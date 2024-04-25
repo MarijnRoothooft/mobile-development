@@ -1,14 +1,9 @@
 import {FunctionComponent} from 'react'
 
-interface PlayedGamesProps {
-
-}
+interface PlayedGamesProps {}
 
 const PlayedGames: FunctionComponent<PlayedGamesProps> = () => {
-    return (
-        <>
-        </>
-    )
+    return <></>
 }
 
 export default PlayedGames

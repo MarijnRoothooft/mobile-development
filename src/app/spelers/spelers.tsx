@@ -7,7 +7,7 @@ interface SpelersProps {}
 const Spelers: FunctionComponent<SpelersProps> = () => {
     return (
         <>
-            <Text variant="displayLarge">Player page</Text>
+            <Text variant="displayMedium">Player page</Text>
 
             <Link href="../">
                 <Button>Back to home</Button>

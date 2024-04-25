@@ -3,10 +3,10 @@ import {FunctionComponent} from 'react'
 
 import WedstrijdForm from '@/app/wedstrijden/wedstrijdForm'
 
-const TaskDetail: FunctionComponent = () => {
+const WedstrijdDetail: FunctionComponent = () => {
     const {wedstrijdId} = useLocalSearchParams<{wedstrijdId: string}>()
 
     return <WedstrijdForm id={wedstrijdId === '-1' ? undefined : wedstrijdId} />
 }
 
-export default TaskDetail
+export default WedstrijdDetail
