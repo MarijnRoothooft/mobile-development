@@ -1,11 +1,11 @@
-interface iWedstrijd {
-    id: string
+interface IWedstrijd {
+    id: number
     ploeg1: string
     ploeg2: string
     gespeeld: boolean
     goalPloeg1: number
     goalPloeg2: number
-    datum?: string
+    datum: Date | undefined
 }
 
-export default iWedstrijd
+export default IWedstrijd

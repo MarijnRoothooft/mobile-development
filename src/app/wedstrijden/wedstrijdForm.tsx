@@ -7,7 +7,7 @@ import {Checkbox, TextInput} from 'react-native-paper'
 import useWedstrijden from '@/hooks/useWedstrijden'
 
 interface WedstrijdFormProps {
-    id?: string
+    id?: number
 }
 
 const WedstrijdForm: FunctionComponent<WedstrijdFormProps> = ({id}) => {
@@ -26,7 +26,7 @@ const WedstrijdForm: FunctionComponent<WedstrijdFormProps> = ({id}) => {
 
     const handleCreateUpdate = () => {
         if (id) {
-            updateWedstrijd({id, ploeg1, ploeg2, gespeeld, goalPloeg1, goalPloeg2, datum: datum?.toISOString()})
+            updateWedstrijd({id, ploeg1, ploeg2, gespeeld, goalPloeg1, goalPloeg2, datum})
         } else {
             maakWedstrijd(ploeg1, ploeg2, gespeeld, goalPloeg1, goalPloeg2, datum?.toISOString())
         }
