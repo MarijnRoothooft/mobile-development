@@ -17,7 +17,7 @@ function connectToDb(): OPSQLiteConnection {
                  gespeeld      BOOL NOT NULL DEFAULT NO,
                  goalPloeg1    INTEGER NOT NULL DEFAULT 0,
                  goalPloeg2    INTEGER NOT NULL DEFAULT 0,
-                 datum        INTEGER
+                 datum         INTEGER
              ) STRICT;`,
         ],
         ...(Array(200)

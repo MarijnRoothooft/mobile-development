@@ -1,8 +1,8 @@
 import {FunctionComponent, useState} from 'react'
 import {Divider, IconButton, List} from 'react-native-paper'
 
-import useWedstrijden from '@/hooks/useWedstrijden'
-import IWedstrijd from '@/models/iWedstrijd'
+import {useDeleteWedstrijden, useToggleWedstrijdStatus} from '@/api/gamesAPi'
+import IWedstrijd from '@/models/IWedstrijd'
 
 const WedstrijdItem: FunctionComponent<IWedstrijd> = ({
     id,
@@ -13,10 +13,21 @@ const WedstrijdItem: FunctionComponent<IWedstrijd> = ({
     goalPloeg2,
     datum,
 }) => {
-    const {toggleWedstrijd, deleteWedstrijd} = useWedstrijden()
+    const deleteMutation = useDeleteWedstrijden()
+    const toggleMutation = useToggleWedstrijdStatus()
     const [showActionSheet, setShowActionSheet] = useState<boolean>(false)
 
     const handleClose = () => setShowActionSheet(false)
+
+    const handleDelete = () => {
+        deleteMutation.mutate({id}) // call the mutation
+        handleClose()
+    }
+
+    const handleToggle = () => {
+        toggleMutation.mutate({id}) // call the mutation
+        handleClose()
+    }
 
     return (
         <>

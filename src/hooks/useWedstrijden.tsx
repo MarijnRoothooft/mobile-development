@@ -2,7 +2,7 @@ import {FunctionComponent, useEffect, useState} from 'react'
 import {useMMKVObject} from 'react-native-mmkv'
 import uuid from 'react-native-uuid'
 
-import IWedstrijd from '../models/iWedstrijd'
+import IWedstrijd from '../models/IWedstrijd'
 
 type useWedstrijdReturnValue = {
     Wedstrijden: IWedstrijd[]
@@ -30,7 +30,7 @@ const UseWedstrijden = (key: string = 'Wedstrijden'): useWedstrijdReturnValue =>
         gespeeld: boolean,
         goalPloeg1: number,
         goalPloeg2: number,
-        datum?: string,
+        datum?: Date,
     ) => {
         setWedstrijden([
             ...(wedstrijden ?? []),
@@ -40,13 +40,13 @@ const UseWedstrijden = (key: string = 'Wedstrijden'): useWedstrijdReturnValue =>
                 gespeeld: false,
                 goalPloeg1,
                 goalPloeg2,
-                datum: datum?.toString(),
-                id: uuid.v4().toString(),
+                datum,
+                id,
             },
         ])
     }
 
-    const toggleWedstrijd = (id: string) => {
+    const toggleWedstrijd = (id: number) => {
         const wedstrijd = wedstrijden?.find(w => w.id === id)
         if (wedstrijd) {
             wedstrijd.gespeeld = !wedstrijd.gespeeld
@@ -54,17 +54,17 @@ const UseWedstrijden = (key: string = 'Wedstrijden'): useWedstrijdReturnValue =>
         }
     }
 
-    const deleteWedstrijd = (id: string) => {
+    const deleteWedstrijd = (id: number) => {
         if (wedstrijden) {
             setWedstrijden(wedstrijden.filter(w => w.id !== id))
         }
     }
 
-    const updateWedstrijd = (newWedstrijd: Partial<IWedstrijd> & {id: string}) => {
+    const updateWedstrijd = (newWedstrijd: Partial<IWedstrijd> & {id: number}) => {
         setWedstrijden(wedstrijden?.map(w => (w.id === newWedstrijd.id ? {...w, ...newWedstrijd} : w)))
     }
 
-    const getWestrijdById = (id: string | undefined): IWedstrijd | undefined => {
+    const getWestrijdById = (id: number | undefined): IWedstrijd | undefined => {
         if (!id) return undefined
         return wedstrijden?.find(w => w.id === id)
     }

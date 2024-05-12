@@ -1,0 +1,5 @@
+1. update de useWedstrijden aangezien alles nu met db werkt
+
+2. pas [wedstrijdId] aan aangezien dit nu een int is
+
+3. wedstrijdform aanpassen naar de nieuwe functies
