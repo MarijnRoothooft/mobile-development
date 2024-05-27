@@ -4,23 +4,15 @@ import {FunctionComponent, useMemo, useState} from 'react'
 import {View, StyleSheet} from 'react-native'
 import {Checkbox, TextInput} from 'react-native-paper'
 
-import useWedstrijden from '@/hooks/useWedstrijden'
-
 interface WedstrijdFormProps {
     id?: number
 }
 
 const WedstrijdForm: FunctionComponent<WedstrijdFormProps> = ({id}) => {
-    const {maakWedstrijd, updateWedstrijd, getWestrijdById} = useWedstrijden()
-    const activeWedstrijd = useMemo(() => getWestrijdById(id), [id])
-    const [ploeg1, setPloeg1] = useState(activeWedstrijd?.ploeg1 ?? '')
-    const [ploeg2, setPloeg2] = useState(activeWedstrijd?.ploeg2 ?? '')
-    const [gespeeld, setGespeeld] = useState(activeWedstrijd?.gespeeld ?? false)
-    const [goalPloeg1, setGoalPloeg1] = useState(activeWedstrijd?.goalPloeg1 ?? 0)
-    const [goalPloeg2, setGoalPloeg2] = useState(activeWedstrijd?.goalPloeg2 ?? 0)
-    const [datum, setDatum] = useState<Date | undefined>(
-        activeWedstrijd?.datum ? new Date(activeWedstrijd?.datum) : undefined,
-    )
+    return <></>
+}
+
+/*
     const [showDatePicker, setShowDatePicker] = useState(false)
     const navigation = useNavigation()
 
@@ -92,6 +84,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         rowGap: 10,
     },
-})
+})*/
 
 export default WedstrijdForm

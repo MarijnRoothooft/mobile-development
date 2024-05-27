@@ -1,5 +1,5 @@
-1. update de useWedstrijden aangezien alles nu met db werkt
+1. spelersform maken
 
-2. pas [wedstrijdId] aan aangezien dit nu een int is
+2. spelersfoto's toevoegen
 
-3. wedstrijdform aanpassen naar de nieuwe functies
+3. tapgesture reconizer toevoegen die wedstrijden op gespeeld zet

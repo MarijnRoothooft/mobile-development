@@ -20,12 +20,12 @@ const WedstrijdItem: FunctionComponent<IWedstrijd> = ({
     const handleClose = () => setShowActionSheet(false)
 
     const handleDelete = () => {
-        deleteMutation.mutate({id}) // call the mutation
+        deleteMutation.mutate({id})
         handleClose()
     }
 
     const handleToggle = () => {
-        toggleMutation.mutate({id}) // call the mutation
+        toggleMutation.mutate({id})
         handleClose()
     }
 
@@ -38,7 +38,7 @@ const WedstrijdItem: FunctionComponent<IWedstrijd> = ({
                     <IconButton
                         icon="soccer"
                         iconColor={gespeeld ? 'green' : props.color}
-                        onPress={() => setShowActionSheet(true)}
+                        onPress={handleToggle}
                     />
                 )}
             />

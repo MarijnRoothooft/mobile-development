@@ -13,7 +13,7 @@ const Wedstrijdlayout: FunctionComponent = () => {
             <Stack.Screen
                 name="(wedstrijden)"
                 options={{
-                    title: 'Gamepage',
+                    title: 'Wedstrijdpagina',
                     headerLeft: ({tintColor}) => (
                         <IconButton
                             icon="menu"
@@ -23,7 +23,7 @@ const Wedstrijdlayout: FunctionComponent = () => {
                             onPress={() => navigation.dispatch(DrawerActions.openDrawer)}
                         />
                     ),
-                    headerRight: ({tintColor}) => (
+                    /*headerRight: ({tintColor}) => (
                         <Link href="../wedstrijdDetail/-1">
                             <IconButton
                                 icon="plus"
@@ -31,7 +31,7 @@ const Wedstrijdlayout: FunctionComponent = () => {
                                 size={25}
                             />
                         </Link>
-                    ),
+                    ),*/
                 }}
             />
 

@@ -1,4 +1,4 @@
-import {FunctionComponent, useEffect, useState} from 'react'
+/*import {FunctionComponent, useEffect, useState} from 'react'
 import {useMMKVObject} from 'react-native-mmkv'
 import uuid from 'react-native-uuid'
 
@@ -79,4 +79,4 @@ const UseWedstrijden = (key: string = 'Wedstrijden'): useWedstrijdReturnValue =>
     }
 }
 
-export default UseWedstrijden
+export default UseWedstrijden*/
