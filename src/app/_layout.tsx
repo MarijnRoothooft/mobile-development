@@ -34,15 +34,15 @@ const Layout: FunctionComponent = () => {
                 }}>
                 <Drawer.Screen
                     name="index"
-                    options={{title: 'Home'}}
+                    options={{title: 'Hoofdpagina'}}
                 />
                 <Drawer.Screen
-                    name="spelers/spelers"
-                    options={{title: 'Players'}}
+                    name="spelers"
+                    options={{title: 'Spelers', headerShown: false}}
                 />
                 <Drawer.Screen
                     name="wedstrijden"
-                    options={{title: 'Games', headerShown: false}}
+                    options={{title: 'Wedstrijden', headerShown: false}}
                 />
             </Drawer>
         </ThemeProvider>

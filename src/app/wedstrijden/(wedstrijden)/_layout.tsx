@@ -9,9 +9,9 @@ const TabsLayout: FunctionComponent = () => {
                 headerShown: false,
             }}>
             <Tabs.Screen
-                name="toBePlayedGames"
+                name="toekomstigeWedstrijden"
                 options={{
-                    title: 'Future games',
+                    title: 'Toekomstige',
                     tabBarIcon: ({color, size}) => (
                         <Icon
                             source="calendar-clock"
@@ -22,9 +22,9 @@ const TabsLayout: FunctionComponent = () => {
                 }}
             />
             <Tabs.Screen
-                name="allGames"
+                name="alleWedstrijden"
                 options={{
-                    title: 'All games',
+                    title: 'Alle',
                     tabBarIcon: ({color, size}) => (
                         <Icon
                             source="soccer-field"
@@ -35,9 +35,9 @@ const TabsLayout: FunctionComponent = () => {
                 }}
             />
             <Tabs.Screen
-                name="playedGames"
+                name="gespeeldeWedstrijden"
                 options={{
-                    title: 'Played games',
+                    title: 'Gespeeld',
                     tabBarIcon: ({color, size}) => (
                         <Icon
                             source="scoreboard"

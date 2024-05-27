@@ -7,7 +7,7 @@ interface WedstrijdenProps {}
 const Index: FunctionComponent<WedstrijdenProps> = () => {
     return (
         <>
-            <Redirect href="/wedstrijden/(wedstrijden)/allGames" />
+            <Redirect href="/wedstrijden/(wedstrijden)/alleWedstrijden" />
         </>
     )
 }

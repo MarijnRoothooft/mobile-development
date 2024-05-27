@@ -136,7 +136,7 @@ async function updateWedstrijd({
     datum,
 }: IWedstrijd): Promise<IWedstrijd> {
     const queryResult = await database.executeAsync(
-        `update Wedstrijd set ploeg1=?; ploeg2=?, gespeeld=?,goalPloeg1=?,Goalploeg2=?, datum=?,WHERE id = ? RETURNING *`,
+        `update Wedstrijd set ploeg1=?, ploeg2=?, gespeeld=?,goalPloeg1=?,Goalploeg2=?, datum=?,WHERE id = ? RETURNING *`,
         [ploeg1, ploeg2, gespeeld, goalPloeg1, goalPloeg2, datum?.getTime(), id],
     )
     return queryResult.rows?._array?.at(0) as IWedstrijd

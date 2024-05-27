@@ -14,7 +14,7 @@ function connectToDb(): OPSQLiteConnection {
                  id          INTEGER PRIMARY KEY AUTOINCREMENT,
                  ploeg1        TEXT    NOT NULL UNIQUE,
                  ploeg2        TEXT    NOT NULL UNIQUE,
-                 gespeeld      BOOL NOT NULL DEFAULT NO,
+                 gespeeld      integer NOT NULL DEFAULT 0,
                  goalPloeg1    INTEGER NOT NULL DEFAULT 0,
                  goalPloeg2    INTEGER NOT NULL DEFAULT 0,
                  datum         INTEGER

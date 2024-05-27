@@ -6,15 +6,16 @@ import WedstrijdItem from '@/app/wedstrijden/wedstrijdItem'
 
 interface AllGamesProps {}
 
-const AllGames: FunctionComponent<AllGamesProps> = () => {
-    const {data: Wedstrijden} = useGetWedstrijden()
+const AlleWedstrijden: FunctionComponent<AllGamesProps> = () => {
+    const {data: wedstrijden} = useGetWedstrijden()
+
     return (
         <FlatList
-            data={Wedstrijden}
+            data={wedstrijden}
             renderItem={w => <WedstrijdItem {...w.item} />}
             keyExtractor={w => w.id.toString()}
         />
     )
 }
 
-export default AllGames
+export default AlleWedstrijden
