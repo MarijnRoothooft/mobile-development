@@ -13,7 +13,7 @@ const Index: FunctionComponent = () => {
             </Text>
 
             <View style={styles.buttonContainer}>
-                <Link href="/spelers/">
+                <Link href="/spelers/(spelers)/spelerLijst">
                     <Button
                         mode="contained"
                         style={styles.button}>
@@ -23,7 +23,7 @@ const Index: FunctionComponent = () => {
             </View>
 
             <View style={styles.buttonContainer}>
-                <Link href="/wedstrijden/">
+                <Link href="/wedstrijden/(wedstrijden)/alleWedstrijden">
                     <Button
                         mode="contained"
                         style={styles.button}>

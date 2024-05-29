@@ -4,6 +4,7 @@ interface ISpeler {
     achternaam: string
     rugnummer: number
     geboortedatum: Date | undefined
+    foto: string
 }
 
 export default ISpeler
