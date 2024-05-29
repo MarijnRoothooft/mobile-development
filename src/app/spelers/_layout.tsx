@@ -1,8 +1,7 @@
 import {DrawerActions} from '@react-navigation/native'
-import {Stack, useNavigation} from 'expo-router'
+import {Link, Stack, useNavigation} from 'expo-router'
+import {View} from 'react-native'
 import {IconButton} from 'react-native-paper'
-
-import SpelerLijst from '@/app/spelers/(spelers)/spelerLijst'
 
 const SpelersLayout = () => {
     const navigation = useNavigation()
@@ -10,7 +9,7 @@ const SpelersLayout = () => {
         <Stack>
             <Stack.Screen name="index" />
             <Stack.Screen
-                name="(spelers/spelersLijst)"
+                name="(spelers)/spelerLijst"
                 options={{
                     title: 'Spelerspagina',
                     headerLeft: ({tintColor}) => (
@@ -22,7 +21,32 @@ const SpelersLayout = () => {
                             onPress={() => navigation.dispatch(DrawerActions.openDrawer)}
                         />
                     ),
+                    headerRight: ({tintColor}) => (
+                        <Link href="../spelerDetail/-1">
+                            <View style={{flexDirection: 'row'}}>
+                                <IconButton
+                                    icon="plus"
+                                    iconColor={tintColor}
+                                    size={25}
+                                />
+                            </View>
+                        </Link>
+                    ),
                 }}
+            />
+            <Stack.Screen
+                options={{
+                    presentation: 'modal',
+                    title: 'Nieuwe Speler',
+                    headerRight: ({tintColor}) => (
+                        <IconButton
+                            icon="check"
+                            iconColor={tintColor}
+                            size={25}
+                        />
+                    ),
+                }}
+                name="spelerDetail/[spelerId]"
             />
         </Stack>
     )

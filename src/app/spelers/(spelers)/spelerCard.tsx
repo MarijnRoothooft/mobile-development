@@ -1,28 +1,32 @@
 import {Card} from '@rneui/base'
 import {FunctionComponent} from 'react'
-import {Text} from 'react-native'
+import {Text, TouchableOpacity, View} from 'react-native'
 
 interface SpelerCardProps {
     rugnummer: number
     voornaam: string
     achternaam: string
     geboortedatum: Date | undefined
+    onPress: () => void
 }
-const SpelerCard: FunctionComponent<SpelerCardProps> = ({rugnummer, voornaam, achternaam, geboortedatum}) => {
+
+const SpelerCard: FunctionComponent<SpelerCardProps> = ({rugnummer, voornaam, achternaam, geboortedatum, onPress}) => {
     return (
-        <Card>
-            <Card.Title>{rugnummer}</Card.Title>
-            <Card.Divider />
-            <Card.Image
-                style={{padding: 0}}
-                source={{uri: ''}} // Replace with actual image URI if available
-            />
-            <Text style={{marginBottom: 10}}>
-                Full name: {voornaam} {achternaam}
-                {'\n'}
-                Birth date: {geboortedatum?.toDateString()}
-            </Text>
-        </Card>
+        <TouchableOpacity onPress={onPress}>
+            <Card>
+                <Card.Title>{rugnummer}</Card.Title>
+                <Card.Divider />
+                <Card.Image
+                    style={{padding: 0}}
+                    source={{uri: ''}} // Replace with actual image URI if available
+                />
+                <Text style={{marginBottom: 10}}>
+                    Volledige naam: {voornaam} {achternaam}
+                    {'\n'}
+                    Geboortedatum: {geboortedatum?.toString().substring(0, 10)}
+                </Text>
+            </Card>
+        </TouchableOpacity>
     )
 }
 

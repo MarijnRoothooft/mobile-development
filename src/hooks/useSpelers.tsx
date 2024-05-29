@@ -17,20 +17,19 @@ const UseSpelers = (key: string = 'spelers'): useSpelerReturnValue => {
     const isUndefined = spelers === undefined
 
     const createSpeler = (voornaam: string, achternaam: string, rugnummer: number, geboortedatum: Date | undefined) => {
-        setSpelers([
-            ...(spelers ?? []),
-            {
-                voornaam,
-                achternaam,
-                rugnummer,
-                geboortedatum,
-                id: uuid.v4.toString(),
-            },
-        ])
+        const newSpeler: ISpeler = {
+            voornaam,
+            achternaam,
+            rugnummer,
+            geboortedatum,
+            id: uuid.v4() as string,
+            foto: '',
+        }
+        setSpelers([...(spelers ?? []), newSpeler])
     }
 
     const updateSpeler = (newSpeler: Partial<ISpeler> & {id: string}) => {
-        setSpelers(spelers?.map(s => (s.id === newSpeler.id ? {...s, newSpeler} : s)))
+        setSpelers(spelers?.map(s => (s.id === newSpeler.id ? {...s, ...newSpeler} : s)))
     }
     const deleteSpeler = (id: string) => {
         if (spelers) {
