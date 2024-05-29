@@ -14,6 +14,9 @@ dependencies:
   '@op-engineering/op-sqlite':
     specifier: ^5.0.5
     version: 5.0.5(react-native@0.73.4)(react@18.2.0)
+  '@react-native-camera-roll/camera-roll':
+    specifier: ^7.8.1
+    version: 7.8.1(react-native@0.73.4)
   '@react-native-community/datetimepicker':
     specifier: ^7.6.4
     version: 7.6.4
@@ -2450,6 +2453,15 @@ packages:
       '@babel/runtime': 7.23.9
       '@radix-ui/react-compose-refs': 1.0.0(react@18.2.0)
       react: 18.2.0
+    dev: false
+
+  /@react-native-camera-roll/camera-roll@7.8.1(react-native@0.73.4):
+    resolution: {integrity: sha512-voVmDlzBS1MVADFk/Vb9GzWzhpoF4ESSjU9qwDNxf/ZA9tirAzX/M0TKcz2V+iFHeRR68cHtZ9tHUhQVG7kJcA==}
+    engines: {node: '>= 18.17.0'}
+    peerDependencies:
+      react-native: '>=0.59'
+    dependencies:
+      react-native: 0.73.4(@babel/core@7.23.9)(@babel/preset-env@7.23.9)(react@18.2.0)
     dev: false
 
   /@react-native-community/cli-clean@12.3.2:
