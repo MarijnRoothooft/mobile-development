@@ -1,4 +1,4 @@
-import {show} from 'cli-cursor'
+import {CameraRoll} from '@react-native-camera-roll/camera-roll'
 import {FunctionComponent, useEffect, useRef, useState} from 'react'
 import {Linking, Modal, Pressable, StyleSheet, View} from 'react-native'
 import {IconButton, Snackbar, TouchableRipple, useTheme} from 'react-native-paper'
@@ -72,7 +72,11 @@ const CameraUI: FunctionComponent<CameraUIProps> = ({showCamera, cameraType, onC
                 <TouchableRipple
                     onPress={async () => {
                         const photo = await camera.current?.takePhoto()
-                        onClose(photo ? {...photo, path: `file://${photo.path}`} : undefined)
+                        if (photo) {
+                            const galleryPhoto = await CameraRoll.saveAsset(`file://${photo.path}`, {type: 'photo'})
+                            onClose({...photo, path: galleryPhoto.node.image.uri})
+                        }
+                        onClose(undefined)
                     }}
                     background={{radius: 40}}
                     centered
@@ -85,17 +89,6 @@ const CameraUI: FunctionComponent<CameraUIProps> = ({showCamera, cameraType, onC
                     ]}>
                     <View />
                 </TouchableRipple>
-
-                <Pressable
-                    style={[
-                        styles.actionButton,
-                        {
-                            borderColor: theme.colors.outlineVariant,
-                            //backgroundColor: changeRgbaOpacity(theme.colors.surface, 0.5),
-                        },
-                    ]}>
-                    <View />
-                </Pressable>
             </View>
         </Modal>
     )

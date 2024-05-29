@@ -7,10 +7,18 @@ interface SpelerCardProps {
     voornaam: string
     achternaam: string
     geboortedatum: Date | undefined
+    foto: string
     onPress: () => void
 }
 
-const SpelerCard: FunctionComponent<SpelerCardProps> = ({rugnummer, voornaam, achternaam, geboortedatum, onPress}) => {
+const SpelerCard: FunctionComponent<SpelerCardProps> = ({
+    rugnummer,
+    voornaam,
+    achternaam,
+    geboortedatum,
+    foto,
+    onPress,
+}) => {
     return (
         <TouchableOpacity onPress={onPress}>
             <Card>
@@ -18,7 +26,7 @@ const SpelerCard: FunctionComponent<SpelerCardProps> = ({rugnummer, voornaam, ac
                 <Card.Divider />
                 <Card.Image
                     style={{padding: 0}}
-                    source={{uri: ''}} // Replace with actual image URI if available
+                    source={{uri: foto}}
                 />
                 <Text style={{marginBottom: 10}}>
                     Volledige naam: {voornaam} {achternaam}
