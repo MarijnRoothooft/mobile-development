@@ -8,13 +8,13 @@ import {PhotoFile} from 'react-native-vision-camera'
 import SpelerForm from '@/app/spelers/spelerForm'
 import CameraUI from '@/camera/cameraUI'
 import useSpelers from '@/hooks/useSpelers'
+import ISpeler from '@/models/ISpeler'
 
-export type SpelerPhotoFile = PhotoFile & {spelerId: string}
 const SpelerDetail: FunctionComponent = () => {
     const {spelerId} = useLocalSearchParams<{spelerId: string}>()
     const {deleteSpeler} = useSpelers()
     const [showCamera, setShowCamera] = useState<boolean>(false)
-    const [photos, setPhotos] = useMMKVObject<SpelerPhotoFile[]>('playersPhotos') || []
+    const [fotos, setFotos] = useState<PhotoFile>()
 
     const handleDelete = () => {
         if (spelerId && spelerId !== '-1') {
@@ -22,9 +22,9 @@ const SpelerDetail: FunctionComponent = () => {
         }
     }
 
-    const onPhotoTaken = (photo: PhotoFile) => {
-        const spelerPhoto: SpelerPhotoFile = {...photo, spelerId}
-        setPhotos(oldPhotos => [...(oldPhotos || []), spelerPhoto])
+    const onPhotoTaken = (foto: PhotoFile) => {
+        const spelerFoto: PhotoFile = {...foto}
+        setFotos(spelerFoto)
     }
 
     return (
@@ -54,16 +54,16 @@ const SpelerDetail: FunctionComponent = () => {
             )}
             <ScrollView style={{maxHeight: '30%'}}>
                 <View style={{maxHeight: '30%'}}>
-                    {photos?.map((photo, index) => (
-                        <Image
-                            source={{...photo, uri: photo.path}}
-                            key={index}
-                            resizeMode="contain"
-                        />
-                    ))}
+                    <Image
+                        source={{...fotos}}
+                        resizeMode="contain"
+                    />
                 </View>
             </ScrollView>
-            <SpelerForm id={spelerId === '-1' ? undefined : spelerId} />
+            <SpelerForm
+                id={spelerId === '-1' ? undefined : spelerId}
+                foto={fotos}
+            />
         </View>
     )
 }

@@ -1,13 +1,14 @@
 import {Card} from '@rneui/base'
 import {FunctionComponent} from 'react'
 import {Text, TouchableOpacity, View} from 'react-native'
+import {PhotoFile} from 'react-native-vision-camera'
 
 interface SpelerCardProps {
     rugnummer: number
     voornaam: string
     achternaam: string
     geboortedatum: Date | undefined
-    foto: string
+    foto: PhotoFile | undefined
     onPress: () => void
 }
 
@@ -26,7 +27,7 @@ const SpelerCard: FunctionComponent<SpelerCardProps> = ({
                 <Card.Divider />
                 <Card.Image
                     style={{padding: 0}}
-                    source={{uri: foto}}
+                    source={{uri: foto?.path}}
                 />
                 <Text style={{marginBottom: 10}}>
                     Volledige naam: {voornaam} {achternaam}

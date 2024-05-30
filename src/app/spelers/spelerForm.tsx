@@ -3,13 +3,15 @@ import {FunctionComponent, useEffect, useMemo, useState} from 'react'
 import {StyleSheet, View} from 'react-native'
 import DatePicker from 'react-native-date-picker'
 import {IconButton, TextInput} from 'react-native-paper'
+import {PhotoFile} from 'react-native-vision-camera'
 
 import useSpelers from '@/hooks/useSpelers'
 
 interface SpelerFormProps {
     id?: string
+    foto: PhotoFile | undefined
 }
-const Spelerform: FunctionComponent<SpelerFormProps> = ({id}) => {
+const Spelerform: FunctionComponent<SpelerFormProps> = ({id, foto}) => {
     const {createSpeler, updateSpeler, getSpelerById} = useSpelers()
     const activeSpeler = useMemo(() => getSpelerById(id), [id])
     const [voornaam, setVoornaam] = useState(activeSpeler?.voornaam ?? '')
@@ -22,9 +24,9 @@ const Spelerform: FunctionComponent<SpelerFormProps> = ({id}) => {
 
     const handleCreateUpdate = () => {
         if (id) {
-            updateSpeler({id, voornaam, achternaam, rugnummer, geboortedatum})
+            updateSpeler({id, voornaam, achternaam, rugnummer, geboortedatum, foto})
         } else {
-            createSpeler(voornaam, achternaam, rugnummer, geboortedatum)
+            createSpeler(voornaam, achternaam, rugnummer, geboortedatum, foto)
         }
         navigation.goBack()
     }
