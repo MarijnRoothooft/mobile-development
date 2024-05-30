@@ -1,12 +1,19 @@
 import {FunctionComponent} from 'react'
 import {useMMKVObject} from 'react-native-mmkv'
 import uuid from 'react-native-uuid'
+import {PhotoFile} from 'react-native-vision-camera'
 
 import ISpeler from '@/models/ISpeler'
 
 type useSpelerReturnValue = {
     spelers: ISpeler[]
-    createSpeler: (voornaam: string, achternaam: string, rugnummer: number, geboortedatum: Date | undefined) => void
+    createSpeler: (
+        voornaam: string,
+        achternaam: string,
+        rugnummer: number,
+        geboortedatum: Date | undefined,
+        foto: PhotoFile | undefined,
+    ) => void
     updateSpeler: (newSpeler: Partial<ISpeler> & {id: string}) => void
     deleteSpeler: (id: string) => void
     getSpelerById: (id: string | undefined) => ISpeler | undefined
@@ -16,15 +23,22 @@ const UseSpelers = (key: string = 'spelers'): useSpelerReturnValue => {
     const [spelers, setSpelers] = useMMKVObject<ISpeler[]>(key)
     const isUndefined = spelers === undefined
 
-    const createSpeler = (voornaam: string, achternaam: string, rugnummer: number, geboortedatum: Date | undefined) => {
+    const createSpeler = (
+        voornaam: string,
+        achternaam: string,
+        rugnummer: number,
+        geboortedatum: Date | undefined,
+        foto: PhotoFile | undefined,
+    ) => {
         const newSpeler: ISpeler = {
             voornaam,
             achternaam,
             rugnummer,
             geboortedatum,
             id: uuid.v4() as string,
-            foto: '',
+            foto,
         }
+        console.log(newSpeler)
         setSpelers([...(spelers ?? []), newSpeler])
     }
 

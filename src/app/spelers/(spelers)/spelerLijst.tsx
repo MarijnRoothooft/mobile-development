@@ -3,17 +3,18 @@ import React, {FunctionComponent, useEffect, useState} from 'react'
 import {ScrollView, View, Image} from 'react-native'
 import {useMMKVObject} from 'react-native-mmkv'
 import {IconButton} from 'react-native-paper'
-
-import {SpelerPhotoFile} from '../spelerDetail/[spelerId]'
+import {PhotoFile} from 'react-native-vision-camera'
 
 import SpelerCard from '@/app/spelers/(spelers)/spelerCard'
 import useSpelers from '@/hooks/useSpelers'
 
 const SpelerLijst: FunctionComponent = () => {
     const {spelers} = useSpelers()
+    console.log('text debug')
+    console.log(spelers)
     const router = useRouter()
     const navigation = useNavigation()
-    const [photos] = useMMKVObject<SpelerPhotoFile[]>('playersPhotos')
+    const [foto] = useMMKVObject<PhotoFile[]>('spelers')
 
     useEffect(() => {
         navigation.setOptions({
@@ -35,11 +36,11 @@ const SpelerLijst: FunctionComponent = () => {
     return (
         <>
             <ScrollView>
-                {spelers.map(s => {
-                    const photo = photos?.find(photo => photo.spelerId === s.id)
-                    const foto = photo
-                        ? photo.path
-                        : 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fget.pxhere.com%2Fphoto%2Fgrass-sport-game-green-soccer-football-sports-equipment-net-ball-927727.jpg&f=1&nofb=1&ipt=01c280c6d4945444d85fe60f41a59de24ce28b3f3107a133ed966d6b2d8c998d&ipo=images'
+                {spelers?.map(s => {
+                    const defaultFoto =
+                        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fget.pxhere.com%2Fphoto%2Fgrass-sport-game-green-soccer-football-sports-equipment-net-ball-927727.jpg&f=1&nofb=1&ipt=01c280c6d4945444d85fe60f41a59de24ce28b3f3107a133ed966d6b2d8c998d&ipo=images'
+                    const spelerFoto = s.foto ? s.foto : defaultFoto
+
                     return (
                         <SpelerCard
                             key={s.id}
@@ -47,7 +48,7 @@ const SpelerLijst: FunctionComponent = () => {
                             voornaam={s.voornaam}
                             achternaam={s.achternaam}
                             geboortedatum={s.geboortedatum}
-                            foto={foto}
+                            foto={s.foto}
                             onPress={() =>
                                 router.navigate({
                                     pathname: '../spelerDetail/[spelerId]',

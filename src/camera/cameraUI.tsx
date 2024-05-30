@@ -71,10 +71,11 @@ const CameraUI: FunctionComponent<CameraUIProps> = ({showCamera, cameraType, onC
 
                 <TouchableRipple
                     onPress={async () => {
-                        const photo = await camera.current?.takePhoto()
-                        if (photo) {
-                            const galleryPhoto = await CameraRoll.saveAsset(`file://${photo.path}`, {type: 'photo'})
-                            onClose({...photo, path: galleryPhoto.node.image.uri})
+                        const foto = await camera.current?.takePhoto()
+                        if (foto) {
+                            const galleryPhoto = await CameraRoll.saveAsset(`file://${foto.path}`, {type: 'photo'})
+                            console.log(galleryPhoto)
+                            onClose({...foto, path: galleryPhoto.node.image.uri})
                         }
                         onClose(undefined)
                     }}
@@ -84,7 +85,6 @@ const CameraUI: FunctionComponent<CameraUIProps> = ({showCamera, cameraType, onC
                         styles.actionButton,
                         {
                             borderColor: theme.colors.outlineVariant,
-                            //backgroundColor: changeRgbaOpacity(theme.colors.surface, 0.5),
                         },
                     ]}>
                     <View />

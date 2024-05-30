@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "504386226076",
+    "project_id": "ggb-app",
+    "storage_bucket": "ggb-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504386226076:android:0a8397069c1418debbea59",
+        "android_client_info": {
+          "package_name": "com.anonymous.project_mobile_development"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504386226076-q7du2li2fiscsomvers2irk2nfnii4l9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anonymous.project_mobile_development",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "504386226076-qpv11jhvd2kpe2l9fi9auung9li6umk0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anonymous.project_mobile_development",
+            "certificate_hash": "6cc25cce2ea66f0ff0dc9a95dbef8e9dcbdba338"
+          }
+        },
+        {
+          "client_id": "504386226076-amieu90iuqc0qd1kju72csc3l94b56q8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSI-BbzbbBGqD3VIwMlpSLaAgvLzqdEdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504386226076-amieu90iuqc0qd1kju72csc3l94b56q8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
