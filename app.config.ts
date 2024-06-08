@@ -8,12 +8,5 @@ export default ({config}: ConfigContext): ExpoConfig => {
     }
 
     config.android.googleServicesFile = process.env.GOOGLE_SERVICES_JSON
-
-    if (!config.ios) {
-        config.ios = {}
-    }
-
-    config.ios.googleServicesFile = process.env.GOOGLE_SERVICES_PLIST
-
     return config as ExpoConfig
 }

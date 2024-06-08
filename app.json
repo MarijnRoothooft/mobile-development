@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "project_mobile_development",
-    "slug": "project_mobile_development",
+    "name": "GGB_Voetbalapp",
+    "slug": "GGB_Voetbalapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -25,7 +25,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/301036810_592938679159506_501899497085365913_n 2.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.anonymous.project_mobile_development",
@@ -40,7 +40,7 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/icon.png"
     },
     "plugins": [
       "expo-router",
