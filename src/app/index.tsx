@@ -1,15 +1,20 @@
+import auth, {firebase} from '@react-native-firebase/auth'
 import {Link} from 'expo-router'
-import {FunctionComponent} from 'react'
+import {FunctionComponent, useEffect, useState} from 'react'
 import {View, StyleSheet} from 'react-native'
 import {Button, Text} from 'react-native-paper'
 
+import useUser from '@/hooks/useUser'
+
 const Index: FunctionComponent = () => {
+    const user = useUser()
+
     return (
         <View style={styles.container}>
             <Text
                 variant="displayMedium"
                 style={styles.welcomeText}>
-                Welkom op de GGB voetbal app
+                {'Welkom op de GGB voetbal app\n' + user?.displayName}
             </Text>
 
             <View style={styles.buttonContainer}>
