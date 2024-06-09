@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "GGB_Voetbalapp",
-    "slug": "GGB_Voetbalapp",
+    "slug": "project_mobile_development",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
